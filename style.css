@@ -1,149 +1,92 @@
 *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-margin:0;
-padding:0;
-box-sizing:border-box;
+
+html,body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:black;
+
+    font-family:Arial, sans-serif;
 
 }
 
 
-body{
 
-background:black;
-
-overflow:hidden;
-
-font-family:Georgia,serif;
-
-}
-
-
-
-/* Opening */
+/* =========================
+   Opening Screen
+========================= */
 
 
 #opening{
 
-position:fixed;
+    position:fixed;
 
-width:100%;
+    width:100%;
+    height:100vh;
 
-height:100%;
+    display:flex;
 
-background:black;
+    justify-content:center;
+    align-items:center;
 
-display:flex;
+    text-align:center;
 
-justify-content:center;
+    background:black;
 
-align-items:center;
+    z-index:10;
 
-color:white;
-
-z-index:10;
-
-transition:2s;
+    transition:opacity 2s ease;
 
 }
-
 
 
 #opening p{
 
-font-size:32px;
+    color:white;
 
-text-align:center;
+    font-size:clamp(22px,4vw,50px);
 
-line-height:1.6;
+    line-height:1.5;
 
-letter-spacing:3px;
-
-}
-
-
-
-
-
-/* particles */
-
-
-.stars{
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-
-background-image:
-
-radial-gradient(circle,#ffd66b 2px,transparent 3px),
-radial-gradient(circle,#ff9edb 2px,transparent 3px),
-radial-gradient(circle,white 1px,transparent 2px);
-
-
-background-size:
-
-120px 120px,
-180px 180px,
-80px 80px;
-
-
-animation:moveStars 15s linear infinite;
-
+    padding:20px;
 
 }
 
 
 
-@keyframes moveStars{
-
-
-from{
-
-transform:translateY(0);
-
-}
-
-
-to{
-
-transform:translateY(-200px);
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* Welcome */
+/* =========================
+   Welcome Screen
+========================= */
 
 
 #welcome{
 
+    position:fixed;
 
-position:fixed;
+    width:100%;
+    height:100vh;
 
-width:100%;
+    display:flex;
 
-height:100%;
+    flex-direction:column;
 
+    justify-content:center;
 
-display:flex;
+    align-items:center;
 
-justify-content:center;
+    background:black;
 
-align-items:center;
+    z-index:5;
 
-
-transition:1.5s;
-
+    transition:opacity 1.5s ease;
 
 }
 
@@ -151,1176 +94,136 @@ transition:1.5s;
 
 #welcome img{
 
+    width:min(80vw,700px);
 
-width:100%;
+    max-height:70vh;
 
-height:100%;
-
-
-object-fit:cover;
-
+    object-fit:contain;
 
 }
 
 
 
-
+/* =========================
+   Buttons
+========================= */
 
 
 button{
 
+    margin-top:40px;
 
-position:absolute;
+    padding:15px 40px;
 
+    border:none;
 
-bottom:60px;
+    border-radius:50px;
 
+    background:white;
 
-padding:18px 45px;
+    color:black;
 
+    font-size:clamp(16px,2vw,22px);
 
-border-radius:40px;
+    cursor:pointer;
 
+    transition:.3s;
 
-background:rgba(255,180,220,.3);
-
-
-border:2px solid pink;
-
-
-color:white;
-
-
-font-size:18px;
-
-
-box-shadow:0 0 25px pink;
-
-
-}
-
-
-
-
-
-/* Video */
-
-
-#introVideo{
-
-
-display:none;
-
-
-width:100vw;
-
-height:100vh;
-
-
-object-fit:cover;
-
-
-opacity:0;
-
-
-transition:2s;
-
-
-}.passwordPage{
-
-height:100vh;
-
-background:
-
-radial-gradient(circle,#30182d,#000);
-
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
-
-}
-
-
-
-.passwordBox{
-
-text-align:center;
-
-padding:40px;
-
-border-radius:25px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(10px);
-
-
-}
-
-
-
-.lock{
-
-font-size:70px;
-
-animation:floatLock 3s infinite;
-
-
-}
-
-
-
-@keyframes floatLock{
-
-50%{
-
-transform:translateY(-15px);
-
-}
-
-}
-
-
-
-.passwordBox h1{
-
-color:#ffd88a;
-
-}
-
-
-
-.passwordBox input{
-
-
-padding:15px;
-
-border-radius:30px;
-
-border:1px solid gold;
-
-background:transparent;
-
-color:white;
-
-text-align:center;
-
-font-size:18px;
-
-
-}
-
-
-
-.passwordBox button{
-
-
-position:static;
-
-margin-top:20px;
-
-}
-
-
-
-#message{
-
-
-margin-top:25px;
-
-font-size:22px;
-
-color:#ffd88a;
-
-
-}
-
-
-
-
-.wrong{
-
-animation:shake .5s;
-
-box-shadow:0 0 30px red;
-
-
-}
-
-
-
-@keyframes shake{
-
-
-0%,100%{
-
-transform:translateX(0);
-
-}
-
-
-25%{
-
-transform:translateX(-15px);
-
-}
-
-
-50%{
-
-transform:translateX(15px);
-
-}
-
-
-75%{
-
-transform:translateX(-10px);
-
-}
-
-
-}
-
-
-
-
-.success{
-
-animation:unlockGlow 2s;
-
-
-}
-
-
-
-@keyframes unlockGlow{
-
-
-50%{
-
-transform:scale(1.1);
-
-box-shadow:0 0 80px gold;
-
-}
-
-
-}/* Text reveal */
-
-.revealLine{
-
-opacity:0;
-
-animation:lineReveal 1.2s forwards;
-
-margin:12px;
-
-}
-
-
-@keyframes lineReveal{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(25px);
-
-filter:blur(5px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-filter:blur(0);
-
-}
-
-
-}
-
-
-
-
-/* Heart Beat */
-
-
-.beatHeart{
-
-display:inline-block;
-
-font-size:38px;
-
-animation:heartBeat 1.2s infinite;
-
-filter:drop-shadow(0 0 15px pink);
-
-}
-
-
-
-@keyframes heartBeat{
-
-
-0%{
-
-transform:scale(1);
-
-}
-
-
-15%{
-
-transform:scale(1.35);
-
-}
-
-
-30%{
-
-transform:scale(1);
-
-}
-
-
-45%{
-
-transform:scale(1.25);
-
-}
-
-
-60%{
-
-transform:scale(1);
-
-}
-
-
-100%{
-
-transform:scale(1);
-
-}
-
-
-}
-
-
-
-
-/* Lock fade */
-
-
-.fadeLock{
-
-animation:fadeLock 1.5s forwards;
-
-}
-
-
-
-@keyframes fadeLock{
-
-
-100%{
-
-opacity:0;
-
-transform:scale(0);
-
-}
-
-
-}
-
-
-
-
-/* Celebration */
-
-
-.celebrate{
-
-animation:celebrateGlow 2s infinite;
-
-}
-
-
-
-@keyframes celebrateGlow{
-
-
-50%{
-
-filter:brightness(1.8);
-
-}
-
-
-}
-
-
-
-
-/* Glow text */
-
-
-.glowText{
-
-color:#ffd6f5;
-
-font-size:26px;
-
-text-shadow:
-
-0 0 10px pink,
-
-0 0 30px gold,
-
-0 0 60px pink;
-
-
-}
-
-
-
-
-/* Fade second message */
-
-
-.fadeText{
-
-opacity:0;
-
-transition:1.5s;
-
-}
-
-
-
-
-/* Wrong password */
-
-
-.wrong{
-
-animation:shake .5s;
-
-box-shadow:0 0 40px red;
-
-}
-
-
-
-@keyframes shake{
-
-
-0%,100%{
-
-transform:translateX(0);
-
-}
-
-
-25%{
-
-transform:translateX(-15px);
-
-}
-
-
-50%{
-
-transform:translateX(15px);
-
-}
-
-
-75%{
-
-transform:translateX(-10px);
-
-}
-
-
-}#disclaimer{
-
-position:fixed;
-
-inset:0;
-
-display:none;
-
-opacity:0;
-
-transition:2s;
-
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-
-padding:30px;
-
-
-background:
-
-linear-gradient(
-180deg,
-#12051f,
-#4a1638,
-#12051f
-);
-
-
-color:white;
-
-overflow:hidden;
-
-z-index:100;
-
-
-}
-
-
-
-.gardenSpark{
-
-position:absolute;
-
-inset:0;
-
-
-background-image:
-
-radial-gradient(circle,#ffd86b 2px,transparent 3px),
-radial-gradient(circle,#ff8fd8 2px,transparent 3px),
-radial-gradient(circle,white 1px,transparent 2px);
-
-
-background-size:
-
-100px 100px,
-160px 160px,
-70px 70px;
-
-
-animation:sparkMove 15s linear infinite;
-
-
-}
-
-
-
-@keyframes sparkMove{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-200px);
-}
-
-}
-
-
-
-.flowers{
-
-position:absolute;
-
-top:12%;
-
-font-size:50px;
-
-animation:
-flowerMove 4s infinite;
-
-
-}
-
-
-
-.orangeDecor{
-
-position:absolute;
-
-bottom:15%;
-
-right:20%;
-
-font-size:55px;
-
-animation:
-orangeMove 5s infinite;
-
-
-}
-
-
-
-@keyframes flowerMove{
-
-50%{
-transform:translateY(-20px);
-}
-
-}
-
-
-
-@keyframes orangeMove{
-
-50%{
-
-transform:translateY(-15px) rotate(10deg);
-
-}
-
-}
-
-
-
-#disTitle{
-
-font-size:34px;
-
-color:#ffd77a;
-
-text-shadow:0 0 20px gold;
-
-
-}
-
-
-
-#disText{
-
-white-space:pre-line;
-
-font-size:20px;
-
-line-height:1.8;
-
-color:#ffe5f5;
-
-
-}
-
-
-
-.revealLine{
-
-animation:
-lineShow 1s forwards;
-
-margin:10px;
-
-
-}
-
-
-
-@keyframes lineShow{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(25px);
-
-filter:blur(5px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-filter:blur(0);
-
 }
 
 
-}
-
-
-
-.beatHeart{
-
-display:inline-block;
-
-font-size:38px;
-
-animation:
-heartBeat 1.2s infinite;
-
-
-}
-
-
-
-@keyframes heartBeat{
-
-
-50%{
-
-transform:scale(1.35);
-
-}
-
-
-}
-
-
-
-.fadeLock{
-
-animation:
-fadeLock 1.5s forwards;
-
-
-}
-
-
-
-@keyframes fadeLock{
-
-to{
-
-opacity:0;
-
-transform:scale(0);
-
-}
-
-}/* Cinderella Disclaimer */
-
-
-#disclaimer{
-
-position:fixed;
-
-inset:0;
-
-
-display:none;
-
-opacity:0;
-
-
-transition:2s;
-
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-
-overflow:hidden;
-
-
-background:
-
-linear-gradient(
-180deg,
-#090014,
-#3b153f,
-#100018
-);
-
-
-z-index:100;
-
-
-
-}
-
-
-
-
-
-.gardenSpark{
-
-
-position:absolute;
-
-inset:0;
-
-
-background-image:
-
-radial-gradient(circle,#ffd86b 2px,transparent 3px),
-radial-gradient(circle,#ff9edb 2px,transparent 3px),
-radial-gradient(circle,white 1px,transparent 2px);
-
-
-background-size:
-
-120px 120px,
-180px 180px,
-80px 80px;
-
-
-animation:
-
-sparkMove 18s linear infinite;
-
-
-}
-
-
-
-
-@keyframes sparkMove{
-
-
-from{
-
-transform:translateY(0);
-
-}
-
-
-to{
-
-transform:translateY(-250px);
-
-}
-
-
-}
-
-
-
-
-/* Flower rotation */
-
-
-.flowers{
-
-
-position:absolute;
-
-top:12%;
-
-
-font-size:50px;
-
-
-z-index:5;
-
-
-}
-
-
-
-.flowers span{
-
-
-display:inline-block;
-
-
-animation:
-
-flowerRotate 5s infinite ease-in-out;
-
-
-}
-
-
-
-.flowers span:nth-child(2){
+button:hover{
 
-animation-delay:1s;
+    transform:scale(1.05);
 
 }
 
 
 
-@keyframes flowerRotate{
+/* =========================
+   ALL VIDEOS
+========================= */
 
 
-0%{
+video{
 
-transform:
+    position:fixed;
 
-rotate(0deg)
-translateY(0);
+    top:50%;
 
-}
-
-
-50%{
-
-transform:
-
-rotate(180deg)
-translateY(-20px);
-
-}
-
-
-100%{
-
-transform:
-
-rotate(360deg)
-translateY(0);
-
-}
-
-
-
-}
-
-
-
-
-/* Orange floating depth */
-
-
-.orangeLayer{
-
-
-position:absolute;
-
-inset:0;
-
-
-}
-
-
-
-.orangeLayer span{
-
-
-position:absolute;
-
-
-font-size:55px;
-
-
-opacity:.5;
-
-
-animation:
-
-orangeFloat 18s infinite linear;
-
-
-}
-
-
-
-.orangeLayer span:nth-child(1){
-
-left:15%;
-
-}
-
-
-
-.orangeLayer span:nth-child(2){
-
-left:55%;
-
-font-size:70px;
-
-animation-delay:5s;
-
-}
-
-
-
-.orangeLayer span:nth-child(3){
-
-left:80%;
-
-animation-delay:10s;
-
-}
-
-
-
-
-@keyframes orangeFloat{
-
-
-0%{
-
-bottom:-100px;
-
-transform:
-
-translateX(0)
-rotate(0deg);
-
-opacity:0;
-
-}
-
-
-
-30%{
-
-opacity:.7;
-
-}
-
-
-
-100%{
-
-bottom:110%;
-
-transform:
-
-translateX(80px)
-rotate(360deg);
-
-opacity:0;
-
-}
-
-
-
-}
+    left:50%;
 
+    transform:translate(-50%,-50%);
 
 
+    width:100vw;
 
+    height:100vh;
 
-.disclaimerContent{
 
+    object-fit:contain;
 
-position:relative;
 
-z-index:10;
+    background:black;
 
 
-width:85%;
+    opacity:0;
 
 
-text-align:center;
+    z-index:20;
 
 
-}
-
-
-
-#disTitle{
-
-
-font-size:34px;
-
-
-color:#ffd87a;
-
-
-text-shadow:
-
-0 0 20px gold;
-
-
-}
-
-
+    transition:opacity 1.5s ease;
 
-#disText{
-
-
-margin-top:30px;
-
-
-font-size:21px;
-
-
-line-height:1.8;
-
-
-color:#ffe6f7;
-
-
-text-shadow:
-
-0 0 15px pink;
-
-
 }
-
-
-
-
-.disclaimerContent button{
 
 
-position:static;
 
-margin-top:35px;
 
+/* =========================
+   Chapter Intro
+========================= */
 
-}/* ===== Eyes Chapter Video ===== */
 
 #chapterIntro{
 
-position:fixed;
-inset:0;
+    position:fixed;
 
-background:
-radial-gradient(circle,#38204f,black);
+    width:100%;
 
-display:flex;
+    height:100vh;
 
-flex-direction:column;
 
-justify-content:center;
+    display:flex;
 
-align-items:center;
+    flex-direction:column;
 
-color:white;
 
-z-index:20;
+    justify-content:center;
 
-transition:2s;
+    align-items:center;
+
+
+    text-align:center;
+
+
+    background:black;
+
+
+    z-index:15;
+
+
+    transition:opacity 1.5s ease;
 
 }
+
 
 
 #chapterIntro h1{
 
-font-size:45px;
+    color:white;
 
-color:#ffd77a;
-
-text-shadow:
-0 0 25px gold;
+    font-size:clamp(40px,6vw,80px);
 
 }
 
@@ -1328,53 +231,281 @@ text-shadow:
 
 #chapterIntro p{
 
-font-size:25px;
+    color:white;
 
-color:#ffd6f5;
+    font-size:clamp(20px,3vw,40px);
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+/* =========================
+   Password Page
+========================= */
+
+
+.passwordPage{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:black;
+
+    padding:20px;
+
+}
+
+
+
+.passwordBox{
+
+    width:min(90%,500px);
+
+    padding:30px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+.passwordBox input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:20px 0;
+
+    border-radius:30px;
+
+    border:none;
+
+    font-size:16px;
 
 }
 
 
 
 
-#eyesVideo{
 
-display:none;
+#message{
 
-width:100vw;
+    color:white;
 
-height:100vh;
+    margin-top:20px;
 
-object-fit:cover;
-
-opacity:0;
-
-transition:2s;
+    font-size:20px;
 
 }
 
 
 
-.chapterSpark{
-
-position:absolute;
-
-inset:0;
 
 
-background-image:
-
-radial-gradient(circle,gold 2px,transparent 3px),
-radial-gradient(circle,pink 2px,transparent 3px);
-
-
-background-size:
-
-100px 100px,
-160px 160px;
+/* =========================
+   Disclaimer
+========================= */
 
 
-animation:sparkMove 15s linear infinite;
+#disclaimer{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    opacity:0;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:black;
+
+    padding:20px;
+
+    color:white;
+
+    z-index:30;
+
+}
+
+
+
+.disclaimerContent{
+
+    max-width:700px;
+
+}
+
+
+
+.disclaimerContent h2{
+
+    font-size:clamp(30px,5vw,60px);
+
+}
+
+
+
+.disclaimerContent p{
+
+    font-size:clamp(16px,2vw,25px);
+
+    line-height:1.5;
+
+    margin:20px;
+
+}
+
+
+
+
+
+/* =========================
+   Mobile
+========================= */
+
+
+@media(max-width:600px){
+
+
+    video{
+
+        width:100vw;
+
+        height:100dvh;
+
+        object-fit:contain;
+
+    }
+
+
+
+    #welcome{
+
+        padding:20px;
+
+    }
+
+
+
+    #welcome img{
+
+        width:90vw;
+
+        max-height:55vh;
+
+    }
+
+
+
+    button{
+
+        margin-top:25px;
+
+        padding:12px 30px;
+
+        font-size:16px;
+
+    }
+
+
+
+    #opening p{
+
+        font-size:24px;
+
+    }
+
+
+
+    .passwordBox{
+
+        padding:20px;
+
+    }
+
+
+
+}
+
+
+
+/* =========================
+   Tablet
+========================= */
+
+
+@media(min-width:601px) and (max-width:1024px){
+
+
+    video{
+
+        width:100vw;
+
+        height:100vh;
+
+        object-fit:contain;
+
+    }
+
+
+
+    #welcome img{
+
+        width:75vw;
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================
+   Laptop/Desktop
+========================= */
+
+
+@media(min-width:1025px){
+
+
+    video{
+
+        width:100vw;
+
+        height:100vh;
+
+        object-fit:contain;
+
+    }
+
+
+    #welcome img{
+
+        width:650px;
+
+    }
 
 
 }
