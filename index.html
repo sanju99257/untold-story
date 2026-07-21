@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Untold Story</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Opening -->
+
+<div id="opening">
+
+
+<div class="stars"></div>
+
+
+<p>
+Some stories are not written...<br>
+They are felt.
+</p>
+
+
+</div>
+
+
+
+
+<!-- Welcome -->
+
+<div id="welcome">
+
+
+<img src="assets/images/welcome.png">
+
+
+<button onclick="startStory()">
+
+✨ Tap To Begin
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- Video -->
+
+
+<video id="introVideo" playsinline>
+
+
+<source src="assets/video/untold-intro.mp4" type="video/mp4">
+
+
+</video>
+
+
+
+
+
+<script>
+
+
+// opening delay
+
+
+setTimeout(()=>{
+
+
+document.getElementById("opening").style.opacity="0";
+
+
+setTimeout(()=>{
+
+
+document.getElementById("opening").style.display="none";
+
+
+},2000);
+
+
+
+},6000);
+
+
+
+
+
+
+function startStory(){
+
+
+let welcome =
+document.getElementById("welcome");
+
+
+let video =
+document.getElementById("introVideo");
+
+
+
+welcome.style.opacity="0";
+
+
+
+setTimeout(()=>{
+
+
+welcome.style.display="none";
+
+
+video.style.display="block";
+
+
+video.style.opacity="1";
+
+
+video.play();
+
+
+
+},1500);
+
+
+
+}
+
+
+
+
+
+
+
+introVideo.onended=function(){
+
+
+setTimeout(()=>{
+
+
+window.location.href="password.html";
+
+
+},1500);
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

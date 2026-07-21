@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Chapter 1 - Eyes</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Chapter Intro -->
+
+<div id="chapterIntro">
+
+
+<div class="chapterSpark"></div>
+
+
+<h1>
+Chapter 1
+</h1>
+
+
+<p>
+The First Glance... 👀
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- Eyes Video -->
+
+
+<video id="eyesVideo" playsinline>
+
+
+<source src="assets/video/eyes.mp4" type="video/mp4">
+
+
+</video>
+
+
+
+
+
+
+<script>
+
+
+let intro =
+document.getElementById("chapterIntro");
+
+
+let video =
+document.getElementById("eyesVideo");
+
+
+
+
+
+// Show chapter intro first
+
+
+setTimeout(()=>{
+
+
+intro.style.opacity="0";
+
+
+
+setTimeout(()=>{
+
+
+intro.style.display="none";
+
+
+video.style.display="block";
+
+
+video.style.opacity="1";
+
+
+video.play();
+
+
+
+},1500);
+
+
+
+},4000);
+
+
+
+
+
+
+
+// After eyes video
+
+
+video.onended=function(){
+
+
+video.style.opacity="0";
+
+
+
+setTimeout(()=>{
+
+
+// next chapter
+
+window.location.href="smile.html";
+
+
+},2000);
+
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
